@@ -1,0 +1,60 @@
+.navbar{
+	float: right;
+	height: $s-size;
+	font-size: $xs-size;
+	display: flex;
+	padding: 3px;
+	border-radius: 10px;
+}
+
+.navbar__expand-button{
+	background-color: black;
+	border-radius: 10px;
+	color: white
+}
+
+// animations
+
+.navbar-animation-enter{
+
+}
+
+.navbar-animation-enter::after{
+	content: "";
+	background: radial-gradient(farthest-corner at 0% 50%, white 0%, grey 30%, rgba(17, 17, 17, 0.8) 60%);
+	width: 50%;
+	height: 50%;
+	position: relative;
+	margin-top: 0.75rem;
+	left: -10px;
+	border-top-right-radius: 100%;
+	border-bottom-right-radius: 100%;
+	border-bottom-left-radius: 25px;
+	border-top-left-radius: 25px;
+}
+
+.navbar-animation-enter-active{
+	animation: increaseWidth 0.8s ease-in;
+}
+
+.navbar-animation-enter-done{
+	width: 50vw;
+}
+
+@keyframes fadeOut {
+	0% {
+		opacity: 1.0;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+@keyframes increaseWidth {
+	0%{
+		width: 0;
+	}
+	100%{
+		width: 50vw;
+	}
+}
