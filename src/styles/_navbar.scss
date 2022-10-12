@@ -1,16 +1,25 @@
 .navbar{
 	float: right;
 	height: $s-size;
-	font-size: $xs-size;
 	display: flex;
 	padding: 3px;
 	border-radius: 10px;
+	position: absolute;
+	right: 0;
+	z-index: 10;
+	display: flex;
+	align-items: center;
+	overflow-x: auto;
+	overflow-y: hidden;
 }
 
 .navbar__expand-button{
 	background-color: black;
 	border-radius: 10px;
-	color: white
+	color: white;
+	padding: 5px;
+	position: sticky;
+	left: 0;
 }
 
 // animations
@@ -25,7 +34,7 @@
 	width: 50%;
 	height: 50%;
 	position: relative;
-	margin-top: 0.75rem;
+	// margin-top: 0.75rem;
 	left: -10px;
 	border-top-right-radius: 100%;
 	border-bottom-right-radius: 100%;
@@ -39,6 +48,18 @@
 
 .navbar-animation-enter-done{
 	width: 50vw;
+}
+
+.navbar-animation-exit{
+
+}
+
+.navbar-animation-exit-active{
+	animation: decreaseWidth 0.8s ease-in;
+}
+
+.navbar-animation-exit-done{
+	
 }
 
 @keyframes fadeOut {
@@ -56,5 +77,54 @@
 	}
 	100%{
 		width: 50vw;
+	}
+}
+
+
+.navbar__button-div{
+}
+
+.navbar__button{
+	background-color: transparent;
+	border: 2px solid white;
+	border-radius: 30px;
+	color: white;
+	font-weight: bold;
+	height: fit-content;
+	padding: 5px 15px;
+	box-sizing: border-box;
+	transition: 0.2s;
+}
+
+.navbar__button:hover{
+	cursor: pointer;
+	border: 4px solid white;
+}
+
+.navbar-button-animation-enter{
+	display: none;
+}
+
+.navbar-button-animation-enter-active{
+
+}
+
+.navbar-button-animation-enter-done{
+	animation: fadeIn 0.8s ease-in;
+	display: block;
+	min-width: $xl-size;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
 	}
 }

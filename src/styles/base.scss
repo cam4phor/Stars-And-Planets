@@ -15,3 +15,27 @@ code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
 		monospace;
 }
+
+
+/* width */
+::-webkit-scrollbar {
+	width: 10px;
+	height: 2px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background: $dark;
+	border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: white; 
+	border-radius: 10px;
+}
+
+/* Handle on hover */
+// ::-webkit-scrollbar-thumb:hover {
+// 	background: $dark; 
+// }
