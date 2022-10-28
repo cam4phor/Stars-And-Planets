@@ -4,8 +4,6 @@ import NavbarButton from "./NavbarButton"
 const NavbarButtonGroup = (props) => {
 	return (
 		Object.keys(bodies).map(body => {
-
-			console.log(bodies[body])
 			return (<NavbarButton 
 				key={bodies[body].name}
 				isNavbarOpen={props.isNavbarOpen}

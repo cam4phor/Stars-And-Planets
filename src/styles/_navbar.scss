@@ -3,6 +3,7 @@
 	height: $s-size;
 	display: flex;
 	padding: 3px;
+	padding-left: 0;
 	border-radius: 10px;
 	position: absolute;
 	right: 0;
@@ -24,8 +25,35 @@
 
 // animations
 
-.navbar-animation-enter{
+// .navbar-animation-enter{
 
+// }
+
+.navbar-expand-button-animation-enter-done{
+	animation: Rotate180 0.3s cubic-bezier(.22,.53,.32,1);
+	transform: rotateZ(180deg);
+}
+
+@keyframes Rotate180 {
+	0%{
+		transform: rotateZ(0);
+	}
+	100%{
+		transform: rotateZ(180deg);
+	}
+}
+
+@keyframes Rotate360 {
+	0%{
+		transform: rotateZ(180deg);
+	}
+	100%{
+		transform: rotateZ(360deg);
+	}
+}
+
+.navbar-expand-button-animation-exit-active{
+	animation: Rotate360 0.3s cubic-bezier(.22,.53,.32,1);
 }
 
 .navbar-animation-enter::after{
@@ -34,7 +62,6 @@
 	width: 50%;
 	height: 50%;
 	position: relative;
-	// margin-top: 0.75rem;
 	left: -10px;
 	border-top-right-radius: 100%;
 	border-bottom-right-radius: 100%;
@@ -43,7 +70,7 @@
 }
 
 .navbar-animation-enter-active{
-	animation: increaseWidth 0.8s ease-in;
+	animation: increaseWidth $navbar-move-in ease-in;
 }
 
 .navbar-animation-enter-done{
@@ -51,24 +78,10 @@
 }
 
 .navbar-animation-exit{
-
-}
-
-.navbar-animation-exit-active{
-	animation: decreaseWidth 0.8s ease-in;
-}
-
-.navbar-animation-exit-done{
-	
-}
-
-@keyframes fadeOut {
-	0% {
-		opacity: 1.0;
-	}
-	100% {
-		opacity: 0;
-	}
+	width: 50vw;
+	animation-name: decreaseWidth;
+	animation-duration: $navbar-move-in;
+	animation-timing-function: ease-in;
 }
 
 @keyframes increaseWidth {
@@ -80,12 +93,23 @@
 	}
 }
 
+@keyframes decreaseWidth {
+	0%{
+		width: 50vw;
+	}
+	100%{
+		width: 0;
+	}
+}
+
 
 .navbar__button-div{
+	min-width: $xl-size;
+	display: none;
 }
 
 .navbar__button{
-	background-color: transparent;
+	background-color: black;
 	border: 2px solid white;
 	border-radius: 30px;
 	color: white;
@@ -93,7 +117,8 @@
 	height: fit-content;
 	padding: 5px 15px;
 	box-sizing: border-box;
-	transition: 0.2s;
+	text-decoration: none;
+	font-size: small;
 }
 
 .navbar__button:hover{
@@ -102,23 +127,29 @@
 }
 
 .navbar-button-animation-enter{
-	display: none;
 }
 
-.navbar-button-animation-enter-active{
+// .navbar-button-animation-enter-active{
 
-}
+// }
 
 .navbar-button-animation-enter-done{
-	animation: fadeIn 0.8s ease-in;
-	display: block;
-	min-width: $xl-size;
+	animation: fadeIn $navbar-button-fade-in ease-in;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
 
+.navbar-button-animation-exit{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	
+}
 
+.navbar-button-animation-exit-active{
+	animation: fadeOut $navbar-button-fade-in ease-out;
+}
 
 @keyframes fadeIn {
 	0% {
@@ -126,5 +157,14 @@
 	}
 	100% {
 		opacity: 1;
+	}
+}
+
+@keyframes fadeOut {
+	0%{
+		opacity: 1.0;
+	}
+	100% {
+		opacity: 0;
 	}
 }

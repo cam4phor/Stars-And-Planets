@@ -1,34 +1,38 @@
 export const bodies = {
 	mercury : {
-		name: "mercury",
+		name: "Mercury",
 		navTo: "/mercury"
 	},
 	venus: {
-		name: "venus",
+		name: "Venus",
 		navTo: "/venus"
 	},
 	earth: {
-		name: "earth",
+		name: "Earth",
 		navTo: "/earth"
 	},
 	mars: {
-		name: "mars",
+		name: "Mars",
 		navTo: "/mars"
 	},
 	jupiter: {
-		name: "jupiter",
+		name: "Jupiter",
 		navTo: "/jupiter"
 	},
 	saturn: {
-		name: "saturn",
+		name: "Saturn",
 		navTo: "/saturn"
 	},
 	uranus: {
-		name: "uranus",
+		name: "Uranus",
 		navTo: "/uranus"
 	},
 	neptune: {
-		name: "neptune",
+		name: "Neptune",
 		navTo: "/neptune"
+	},
+	pluto: {
+		name: "Pluto",
+		navTo: "/pluto"
 	}
 }

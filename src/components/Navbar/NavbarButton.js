@@ -1,22 +1,24 @@
 import { CSSTransition }  from 'react-transition-group'
+import { animationConstants } from '../../constants/animationConstants'
+import { NavLink } from 'react-router-dom'
+
+
 const NavbarButton = (props) => {
-	console.log(props.isNavbarOpen)
 	return (
 		<CSSTransition
 			in={props.isNavbarOpen}
-			timeout={800}
+			timeout={animationConstants.buttonFadeIn}
 			classNames="navbar-button-animation"
 		>
-			<div>
+			<div className='navbar__button-div'>
 				{
-					props.isNavbarOpen &&
-					<button className='navbar__button'>
+					<NavLink 
+						className='navbar__button'
+						to={props.navTo}>
 						{props.name}
-					</button>
+					</NavLink>
 				}
 			</div>
-			
-			
 		</CSSTransition>
 	)
 }

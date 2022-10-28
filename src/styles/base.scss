@@ -16,6 +16,13 @@ code {
 		monospace;
 }
 
+.pauseAnimation{
+	animation-play-state: paused !important;
+}
+
+.runAnimation{
+	animation-play-state: running !important;
+}
 
 /* width */
 ::-webkit-scrollbar {
