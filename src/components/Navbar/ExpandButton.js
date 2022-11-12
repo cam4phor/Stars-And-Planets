@@ -13,7 +13,7 @@ const ExpandButton = () => {
 			classNames="navbar-expand-button-animation"
 			>
 				<button className="navbar__expand-button" onClick={() => setIsNavbarOpen(!isNavbarOpen)}>
-					<img src={image} />
+					<img src={image} alt={"expand-button"} />
 				</button>
 		</CSSTransition>
 		
