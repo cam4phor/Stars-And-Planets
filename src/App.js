@@ -12,6 +12,9 @@ import Uranus from "./components/Pages/uranus";
 import Neptune from "./components/Pages/neptune";
 import Pluto from "./components/Pages/pluto";
 import { Canvas, useThree } from "@react-three/fiber";
+import { useEffect } from "react";
+import mousePos from "./components/globalVariables/mousePos";
+import Stars from "./components/Pages/stars";
 
 const App = () => {
     return (
@@ -29,13 +32,29 @@ const App = () => {
 }
 
 const Scene = () => {
+	useEffect(() => {
+		const mouseEvent = document.addEventListener('mousemove', (event) => {
+			mousePos.x = event.clientX/window.innerWidth * 2 - 1;
+			mousePos.y = event.clientY/window.innerHeight * 2 - 1
+		})
+
+		return (() => {
+			document.removeEventListener('mousemove', mouseEvent)
+		})
+	}, [])
 	return (
 		<div>
-			<Canvas id="mercuryCanvas" 
+			<Canvas
+				onPointerDown={(e) => {
+					mousePos.clicked = true
+				}}
+				onPointerUp={() => mousePos.clicked = false} 
+				id="mercuryCanvas" 
 				style={{width: "100vw", height: "100vh"}}
 			>
 				<UseSetRenderer />
 				<ambientLight />
+				<Stars />
 				<Routes>
 					<Route path="*" element={<NotFound />}/>
 					<Route path="/mercury" element={<Mercury />}/>
