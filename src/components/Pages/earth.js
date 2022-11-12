@@ -6,7 +6,7 @@ import fragmentShader from "../../shaders/fragmentShader"
 import * as THREE from 'three'
 import atmosphereVertexShader from "../../shaders/atmosphereVertexShader"
 import atmosphereFragmentShader from "../../shaders/atmosphereFragmentShader"
-import mousePos, { mouseClickedPos } from "../globalVariables/mousePos"
+import mousePos from "../globalVariables/mousePos"
 
 const Earth = () => {
 	const ref = useRef(null)

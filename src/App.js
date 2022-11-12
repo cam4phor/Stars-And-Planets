@@ -1,7 +1,6 @@
 import Navbar from "./components/Navbar/Navbar";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
 import NotFound from "./components/Pages/NotFound";
-import ReactLilGUI from "./components/gui/reactLilGui";
 import Mercury from "./components/Pages/mercury";
 import Venus from "./components/Pages/venus";
 import Earth from "./components/Pages/earth";
