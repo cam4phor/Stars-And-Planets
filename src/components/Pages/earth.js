@@ -1,11 +1,11 @@
 import { useFrame } from "@react-three/fiber"
 import { Fragment, useMemo, useRef } from "react"
 import image from '../../assets/textures/earth_color_10K.png'
-import vertexShader from "../../shaders/vertexShader"
-import fragmentShader from "../../shaders/fragmentShader"
+import vertexShader from "../../shaders/earth/vertexShader"
+import fragmentShader from "../../shaders/earth/fragmentShader"
 import * as THREE from 'three'
-import atmosphereVertexShader from "../../shaders/atmosphereVertexShader"
-import atmosphereFragmentShader from "../../shaders/atmosphereFragmentShader"
+import atmosphereVertexShader from "../../shaders/earth/atmosphereVertexShader"
+import atmosphereFragmentShader from "../../shaders/earth/atmosphereFragmentShader"
 import mousePos from "../globalVariables/mousePos"
 
 const Earth = () => {
